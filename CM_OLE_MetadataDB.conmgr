@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="CM_OLE_MetadataDB"
+  DTS:DTSID="{97E141F0-733A-4413-8114-D9A19CB873AA}"
+  DTS:CreationName="OLEDB">
+  <DTS:PropertyExpression
+    DTS:Name="ConnectionString">@[$Project::CM_METADATA_DB_CONN_STRING]</DTS:PropertyExpression>
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=APU-VM047;Initial Catalog=MetadataDB;Provider=SQLNCLI11.1;Packet Size=32767;Integrated Security=SSPI;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

@@ -1,0 +1,1938 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="11/10/2013"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="Tulga-PC"
+  DTS:CreatorName="Tulga"
+  DTS:DTSID="{9553F031-A532-4DDD-ABB8-4C4805C66459}"
+  DTS:EnableConfig="True"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.123"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="QueueProcessingPackage"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="0"
+  DTS:VersionBuild="447"
+  DTS:VersionComments="example package"
+  DTS:VersionGUID="{57C48B00-27C5-4288-8A15-14779FA13E0A}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Configurations>
+    <DTS:Configuration
+      DTS:ConfigurationString="BATCH_LOG_ID"
+      DTS:ConfigurationVariable="\Package.Variables[User::BATCH_LOG_ID].Properties[Value]"
+      DTS:CreationName=""
+      DTS:DTSID="{B91ECBB8-379C-428F-9E12-FD1567022D48}"
+      DTS:ObjectName="BATCH_LOG_ID" />
+    <DTS:Configuration
+      DTS:ConfigurationString="BATCH_NAME"
+      DTS:ConfigurationVariable="\Package.Variables[User::BATCH_NAME].Properties[Value]"
+      DTS:CreationName=""
+      DTS:DTSID="{9078B9FB-9F90-43D1-A13E-F08DEED76D7B}"
+      DTS:ObjectName="BATCH_NAME" />
+    <DTS:Configuration
+      DTS:ConfigurationString="DEFAULT_DATETIME"
+      DTS:ConfigurationVariable="\Package.Variables[User::DEFAULT_DATETIME].Properties[Value]"
+      DTS:CreationName=""
+      DTS:DTSID="{439C7C9B-2F15-4FE4-8001-06CA5B46642D}"
+      DTS:ObjectName="DEFAULT_DATETIME" />
+    <DTS:Configuration
+      DTS:ConfigurationString="EXTRACT_DAYS"
+      DTS:ConfigurationVariable="\Package.Variables[User::EXTRACT_DAYS].Properties[Value]"
+      DTS:CreationName=""
+      DTS:DTSID="{476525D3-86D9-4FED-93A0-E858A84926C4}"
+      DTS:ObjectName="EXTRACT_DAYS" />
+    <DTS:Configuration
+      DTS:ConfigurationString="LOAD_DATETIME"
+      DTS:ConfigurationVariable="\Package.Variables[User::LOAD_DATETIME].Properties[Value]"
+      DTS:CreationName=""
+      DTS:DTSID="{8F278B87-425D-47A8-9D0C-82A62A4C6466}"
+      DTS:ObjectName="LOAD_DATETIME" />
+    <DTS:Configuration
+      DTS:ConfigurationString="LO_DATETIME"
+      DTS:ConfigurationVariable="\Package.Variables[User::LO_DATETIME].Properties[Value]"
+      DTS:CreationName=""
+      DTS:DTSID="{137ACC62-9517-46F4-99BE-0A6878A502C7}"
+      DTS:ObjectName="LO_DATETIME" />
+    <DTS:Configuration
+      DTS:ConfigurationString="HI_DATETIME"
+      DTS:ConfigurationVariable="\Package.Variables[User::HI_DATETIME].Properties[Value]"
+      DTS:CreationName=""
+      DTS:DTSID="{3EE47959-041C-4E6D-93DB-F8EECD9BE741}"
+      DTS:ObjectName="HI_DATETIME" />
+    <DTS:Configuration
+      DTS:ConfigurationString="ACTIVE_DATABASE_SERVER"
+      DTS:ConfigurationVariable="\Package.Variables[User::ACTIVE_DATABASE_SERVER].Properties[Value]"
+      DTS:CreationName=""
+      DTS:DTSID="{BD39F276-E736-448E-9F8B-9B4AB1C45FBC}"
+      DTS:ObjectName="ACTIVE_DATABASE_SERVER" />
+    <DTS:Configuration
+      DTS:ConfigurationString="COMPARISON_DATABASE_SERVER"
+      DTS:ConfigurationVariable="\Package.Variables[User::COMPARISON_DATABASE_SERVER].Properties[Value]"
+      DTS:CreationName=""
+      DTS:DTSID="{37465A01-4114-438D-9A60-310F06A36274}"
+      DTS:ObjectName="COMPARISON_DATABASE_SERVER" />
+    <DTS:Configuration
+      DTS:ConfigurationString="CONNECTION_STRING"
+      DTS:ConfigurationVariable="\Package.Variables[User::CONNECTION_STRING].Properties[Value]"
+      DTS:CreationName=""
+      DTS:DTSID="{2117C705-64FF-42AC-8992-505D0115D66D}"
+      DTS:ObjectName="CONNECTION_STRING" />
+    <DTS:Configuration
+      DTS:ConfigurationString="PARALLEL_PROCESSES"
+      DTS:ConfigurationVariable="\Package.Variables[User::PARALLEL_PROCESSES].Properties[Value]"
+      DTS:CreationName=""
+      DTS:DTSID="{B86F6763-94B2-4268-B67B-F9F4D7819624}"
+      DTS:ObjectName="PARALLEL_PROCESSES" />
+  </DTS:Configurations>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{F92B8DC7-126E-44D5-BB51-D1BA12F7FABE}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="ACTIVE_DATABASE_SERVER">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{17C8AE48-4914-4B48-9D75-8CF8A16D93E6}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="BATCH_LOG_ID">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{3FA841B7-E8EE-4385-B84F-1F0099F3BC8E}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="BATCH_NAME">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{A14B0EE6-BE53-48F6-9C74-540AE9903838}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="COMPARISON_DATABASE_SERVER">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{BEFFCD9E-BF7D-4BCB-8347-91D28092EF68}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="CONNECTION_STRING">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{A26273B4-BA8A-49C6-A75D-DEDF0FEE3F49}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="CURRENT_PRIORITY_GROUP_IN">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{184D5767-62CC-4F6C-97E5-877690E4055D}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="CURRENT_PRIORITY_GROUP_OUT">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{6C716F88-E7F5-4755-A8FD-EED7E3ACF687}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="DEFAULT_DATETIME">
+      <DTS:VariableValue
+        DTS:DataType="7">1/1/1900</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{3E1DE5F2-FC24-472B-AD7B-D278CDC30F12}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="DIRECTORY_PATH">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{E28E94A9-4DD1-459F-BD0F-34214D16ACCF}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="EMAIL_ADDRESS">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{F7AC3812-7D93-41DF-9F1F-3DA2DA4EAAAD}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="EXECUTE_PACKAGES_IN">
+      <DTS:VariableValue
+        DTS:DataType="3">1</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{04A6CD3B-8E08-49C9-8A87-0E97E451C770}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="EXECUTE_PACKAGES_OUT">
+      <DTS:VariableValue
+        DTS:DataType="3">1</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{BE6E0AD4-140D-408E-A6AE-73BB7A05CFA8}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="EXTRACT_DAYS">
+      <DTS:VariableValue
+        DTS:DataType="20">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{67FF6D67-C3FD-45EE-A9ED-07241621AFE1}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="HI_DATETIME">
+      <DTS:VariableValue
+        DTS:DataType="7">12/31/9000</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{514DE258-ABB5-45B7-BDB1-A9F5AF170CCC}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[$Project::ServerName] == &quot;AUSYDSQLD41&quot; &#xA;?&#xA;(DT_STR, 2, 1252)DATEPART( &quot;dd&quot;, @[User::HI_DATETIME] ) + &quot;-&quot; + &#xA;(DT_STR, 2, 1252)DATEPART( &quot;mm&quot;, @[User::HI_DATETIME] ) + &quot;-&quot; + &#xA;(DT_STR, 4, 1252)DATEPART( &quot;yyyy&quot;, @[User::HI_DATETIME] ) + &quot; &quot; + &#xA;(DT_STR, 2, 1252)DATEPART( &quot;Hh&quot;, @[User::HI_DATETIME] ) + &quot;:&quot; + &#xA;(DT_STR, 2, 1252)DATEPART( &quot;mi&quot;, @[User::HI_DATETIME] ) + &quot;:&quot; + &#xA;(DT_STR, 2, 1252)DATEPART( &quot;ss&quot;, @[User::HI_DATETIME] )&#xA;:&#xA;(DT_STR, 2, 1252)DATEPART( &quot;mm&quot;, @[User::HI_DATETIME] ) + &quot;-&quot; + &#xA;(DT_STR, 2, 1252)DATEPART( &quot;dd&quot;, @[User::HI_DATETIME] ) + &quot;-&quot; + &#xA;(DT_STR, 4, 1252)DATEPART( &quot;yyyy&quot;, @[User::HI_DATETIME] ) + &quot; &quot; + &#xA;(DT_STR, 2, 1252)DATEPART( &quot;Hh&quot;, @[User::HI_DATETIME] ) + &quot;:&quot; + &#xA;(DT_STR, 2, 1252)DATEPART( &quot;mi&quot;, @[User::HI_DATETIME] ) + &quot;:&quot; + &#xA;(DT_STR, 2, 1252)DATEPART( &quot;ss&quot;, @[User::HI_DATETIME] )"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="HI_DATETIME_STRING">
+      <DTS:VariableValue
+        DTS:DataType="8">12-31-9000 0:0:0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{41D9C479-1FB0-4112-B101-DDEF09C3C4C2}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="LAST_LOAD_DATETIME">
+      <DTS:VariableValue
+        DTS:DataType="7">1/1/2018</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{91C99729-1D45-40DC-B0E9-D862F6660AC1}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="LOAD_DATETIME">
+      <DTS:VariableValue
+        DTS:DataType="7">1/1/1900</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{23D2900F-3AED-44E2-BEDF-7F18576E45D7}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[$Project::ServerName] == &quot;AUSYDSQLD41&quot; &#xA;?&#xA;(DT_STR, 2, 1252)DATEPART( &quot;dd&quot;, @[User::LOAD_DATETIME] ) + &quot;-&quot; + &#xA;(DT_STR, 2, 1252)DATEPART( &quot;mm&quot;, @[User::LOAD_DATETIME] ) + &quot;-&quot; + &#xA;(DT_STR, 4, 1252)DATEPART( &quot;yyyy&quot;, @[User::LOAD_DATETIME] ) + &quot; &quot; + &#xA;(DT_STR, 2, 1252)DATEPART( &quot;Hh&quot;, @[User::LOAD_DATETIME] ) + &quot;:&quot; + &#xA;(DT_STR, 2, 1252)DATEPART( &quot;mi&quot;, @[User::LOAD_DATETIME] ) + &quot;:&quot; + &#xA;(DT_STR, 2, 1252)DATEPART( &quot;ss&quot;, @[User::LOAD_DATETIME] )&#xA;:&#xA;(DT_STR, 2, 1252)DATEPART( &quot;mm&quot;, @[User::LOAD_DATETIME] ) + &quot;-&quot; + &#xA;(DT_STR, 2, 1252)DATEPART( &quot;dd&quot;, @[User::LOAD_DATETIME] ) + &quot;-&quot; + &#xA;(DT_STR, 4, 1252)DATEPART( &quot;yyyy&quot;, @[User::LOAD_DATETIME] ) + &quot; &quot; + &#xA;(DT_STR, 2, 1252)DATEPART( &quot;Hh&quot;, @[User::LOAD_DATETIME] ) + &quot;:&quot; + &#xA;(DT_STR, 2, 1252)DATEPART( &quot;mi&quot;, @[User::LOAD_DATETIME] ) + &quot;:&quot; + &#xA;(DT_STR, 2, 1252)DATEPART( &quot;ss&quot;, @[User::LOAD_DATETIME] )"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="LOAD_DATETIME_STRING">
+      <DTS:VariableValue
+        DTS:DataType="8">1-1-1900 0:0:0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{393A59AD-E624-453B-8213-482A31826CEA}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="LOOPS_TO_EXECUTE_IN">
+      <DTS:VariableValue
+        DTS:DataSubType="ManagedSerializable"
+        DTS:DataType="13">
+        <SOAP-ENV:Envelope xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+          <SOAP-ENV:Body>
+            <xsd:anyType
+              id="ref-1"></xsd:anyType>
+          </SOAP-ENV:Body>
+        </SOAP-ENV:Envelope>
+      </DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{22809D27-26D5-4995-86DD-880DDB8562AB}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="LOOPS_TO_EXECUTE_OUT">
+      <DTS:VariableValue
+        DTS:DataSubType="ManagedSerializable"
+        DTS:DataType="13">
+        <SOAP-ENV:Envelope xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+          <SOAP-ENV:Body>
+            <xsd:anyType
+              id="ref-1"></xsd:anyType>
+          </SOAP-ENV:Body>
+        </SOAP-ENV:Envelope>
+      </DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{C59516EE-2DF9-41F2-BACA-D540DC03A361}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="LO_DATETIME">
+      <DTS:VariableValue
+        DTS:DataType="7">1/1/1900</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{83B79729-1F94-4057-B06C-23ECADF58861}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[$Project::ServerName] == &quot;AUSYDSQLD41&quot; &#xA;?&#xA;(DT_STR, 2, 1252)DATEPART( &quot;dd&quot;, @[User::LO_DATETIME] ) + &quot;-&quot; + &#xA;(DT_STR, 2, 1252)DATEPART( &quot;mm&quot;, @[User::LO_DATETIME] ) + &quot;-&quot; + &#xA;(DT_STR, 4, 1252)DATEPART( &quot;yyyy&quot;, @[User::LO_DATETIME] ) + &quot; &quot; + &#xA;(DT_STR, 2, 1252)DATEPART( &quot;Hh&quot;, @[User::LO_DATETIME] ) + &quot;:&quot; + &#xA;(DT_STR, 2, 1252)DATEPART( &quot;mi&quot;, @[User::LO_DATETIME] ) + &quot;:&quot; + &#xA;(DT_STR, 2, 1252)DATEPART( &quot;ss&quot;, @[User::LO_DATETIME] )&#xA;:&#xA;(DT_STR, 2, 1252)DATEPART( &quot;mm&quot;, @[User::LO_DATETIME] ) + &quot;-&quot; + &#xA;(DT_STR, 2, 1252)DATEPART( &quot;dd&quot;, @[User::LO_DATETIME] ) + &quot;-&quot; + &#xA;(DT_STR, 4, 1252)DATEPART( &quot;yyyy&quot;, @[User::LO_DATETIME] ) + &quot; &quot; + &#xA;(DT_STR, 2, 1252)DATEPART( &quot;Hh&quot;, @[User::LO_DATETIME] ) + &quot;:&quot; + &#xA;(DT_STR, 2, 1252)DATEPART( &quot;mi&quot;, @[User::LO_DATETIME] ) + &quot;:&quot; + &#xA;(DT_STR, 2, 1252)DATEPART( &quot;ss&quot;, @[User::LO_DATETIME] )"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="LO_DATETIME_STRING">
+      <DTS:VariableValue
+        DTS:DataType="8">1-1-1900 0:0:0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{4F4D5B27-AFAD-466E-8182-0E7808D61C2B}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Package01">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{C4584C5C-2880-46D8-AEC8-DEC566F1A6BA}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Package02">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{D88D7E8A-4217-4C86-802A-4D6A175BB445}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Package03">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{0C18BED5-D2A4-4367-B384-68B4C4CC2138}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Package04">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{8E4CD6AA-C9E0-4F67-BB9F-F60A02450DF8}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Package05">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{D94D883D-15B9-4E86-8413-A2871FCE636E}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Package06">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{308C5BC4-F733-489A-A1F1-FDB7E177BC9A}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="PackageA">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{27F89767-6427-43C4-AFCB-62A1CDE4192F}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="PackageB">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{6CF4A983-B6C9-4CEC-A7B2-BBAA8DB8B9DB}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="PackageC">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{FBDCF5F5-D8DE-475A-AEEF-4CD121986800}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="PackageD">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{5E523D4D-E42B-49ED-A773-F83138BB95DF}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="PackageE">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{843D5922-5E35-471D-9665-D85B1C7B462D}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="PackageF">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{C3280899-8A8C-47ED-92E5-976801E59FD3}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="PARALLEL_PROCESSES">
+      <DTS:VariableValue
+        DTS:DataType="3">1</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{999997BA-E03A-423D-A317-CBE7E57786A2}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="RunningPackageA">
+      <DTS:VariableValue
+        DTS:DataType="3">1</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{A02DD6AC-A4F3-4BE5-B911-F16AA57DC9BE}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="RunningPackageB">
+      <DTS:VariableValue
+        DTS:DataType="3">1</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{9DA7BB07-A612-48BB-B2BD-8ADFC351C8A3}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="RunningPackageC">
+      <DTS:VariableValue
+        DTS:DataType="3">1</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{EFDAFEE9-7374-4E51-A01D-4AA0105B1D71}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="RunningPackageD">
+      <DTS:VariableValue
+        DTS:DataType="3">1</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{C0D1693C-CD9A-420D-BE51-072C151A9C6F}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="RunningPackageE">
+      <DTS:VariableValue
+        DTS:DataType="3">1</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{0E5457F3-A4C8-4820-86D2-50CD8DD7ADDA}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="RunningPackageF">
+      <DTS:VariableValue
+        DTS:DataType="3">1</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\CON_FEL_Priority_Group In - Within Master Package - Shared with same Virthual Memory"
+      DTS:CreationName="STOCK:FOREACHLOOP"
+      DTS:Description="Foreach Loop Container"
+      DTS:DTSID="{7DFAA97D-7FDA-4C69-8496-383453090106}"
+      DTS:ExecutableType="STOCK:FOREACHLOOP"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="CON_FEL_Priority_Group In - Within Master Package - Shared with same Virthual Memory">
+      <DTS:ForEachEnumerator
+        DTS:CreationName="Microsoft.ForEachADOEnumerator"
+        DTS:DTSID="{6CEF1BC5-D906-4D78-B02E-745C25ED456B}"
+        DTS:ObjectName="{6CEF1BC5-D906-4D78-B02E-745C25ED456B}">
+        <DTS:ObjectData>
+          <FEEADO
+            EnumType="EnumerateRowsInFirstTable"
+            VarName="User::LOOPS_TO_EXECUTE_IN" />
+        </DTS:ObjectData>
+      </DTS:ForEachEnumerator>
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\CON_FEL_Priority_Group In - Within Master Package - Shared with same Virthual Memory\CON_FLC_Execute_queue_1"
+          DTS:CreationName="STOCK:FORLOOP"
+          DTS:Description="Loop until package variable is empty"
+          DTS:DTSID="{71D339BC-9E52-4409-B462-62E318D31F5A}"
+          DTS:EvalExpression="@[User::PARALLEL_PROCESSES] &gt;= 1&amp;&amp;@[User::EXECUTE_PACKAGES_IN]==1"
+          DTS:ExecutableType="STOCK:FORLOOP"
+          DTS:LocaleID="-1"
+          DTS:MaxConcurrent="1"
+          DTS:ObjectName="CON_FLC_Execute_queue_1">
+          <DTS:Variables />
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\CON_FEL_Priority_Group In - Within Master Package - Shared with same Virthual Memory\CON_FLC_Execute_queue_1\TSK_EPKG_queue_1"
+              DTS:CreationName="Microsoft.ExecutePackageTask"
+              DTS:DelayValidation="True"
+              DTS:Description="Execute package from queue"
+              DTS:DTSID="{BF43527B-C945-400F-AC4E-EF635AD1EBF5}"
+              DTS:ExecutableType="Microsoft.ExecutePackageTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="TSK_EPKG_queue_1"
+              DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:TransactionOption="0">
+              <DTS:Variables />
+              <DTS:PropertyExpression
+                DTS:Name="PackageName">@[User::Package01]</DTS:PropertyExpression>
+              <DTS:ObjectData>
+                <ExecutePackageTask>
+                  <UseProjectReference>True</UseProjectReference>
+                </ExecutePackageTask>
+              </DTS:ObjectData>
+            </DTS:Executable>
+            <DTS:Executable
+              DTS:refId="Package\CON_FEL_Priority_Group In - Within Master Package - Shared with same Virthual Memory\CON_FLC_Execute_queue_1\TSK_EST_Get_package"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Get first package from queue"
+              DTS:DTSID="{8E2F6C4C-BFF6-4F70-99AB-AA8CE8CB498B}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="TSK_EST_Get_package"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="1">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{97E141F0-733A-4413-8114-D9A19CB873AA}"
+                  SQLTask:SqlStatementSource="set nocount on;&#xA;&#xA;-- Declare temporary table to store the result of the delete&#xA;DECLARE @TmpTable TABLE (Package varchar(500));&#xA;-- Declare integer variable for counting the delete result&#xA;DECLARE @PackageCount int;&#xA;&#xA;-- Select first record, lock it, delete it and store name in temporary table&#xA;WITH cte as (&#xA;&#x9;&#x9;&#x9;SELECT&#x9;&#x9;top(1) PACKAGE_NAME AS Package&#xA;&#x9;&#x9;&#x9;FROM&#x9;&#x9;[dbo].[PackageQueue] WITH (rowlock, readpast)&#xA;&#x9;&#x9;&#x9;WHERE&#x9;&#x9;BATCH_NAME = ? AND PRIORITY_GROUP = ?&#xA;&#x9;&#x9;&#x9;ORDER BY&#x9;PRIORITY_ORDER&#xA;&#x9;&#x9;&#x9;)&#xA;DELETE FROM cte&#xA;output deleted.Package INTO @TmpTable&#xA;&#xA;-- Check if there is 1 record in temporary table&#xA;SELECT @PackageCount = count(*) FROM @TmpTable&#xA;if @PackageCount = 1&#xA;BEGIN&#xA;&#x9;-- Return package name&#xA;&#x9;SELECT Package, 1 AS EXECUTE_PACKAGES FROM @TmpTable&#xA;END&#xA;ELSE&#xA;BEGIN&#xA;&#x9;-- Temporary table was empty so queue was empty&#xA;&#x9;-- Return empty string to stop next precedence constraint&#xA;&#x9;SELECT '' as Package, 0 AS EXECUTE_PACKAGES&#xA;END&#xA;"
+                  SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                  <SQLTask:ResultBinding
+                    SQLTask:ResultName="Package"
+                    SQLTask:DtsVariableName="User::Package01" />
+                  <SQLTask:ResultBinding
+                    SQLTask:ResultName="EXECUTE_PACKAGES"
+                    SQLTask:DtsVariableName="User::EXECUTE_PACKAGES_IN" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="0"
+                    SQLTask:DtsVariableName="User::BATCH_NAME"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="129"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="1"
+                    SQLTask:DtsVariableName="User::CURRENT_PRIORITY_GROUP_IN"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="3"
+                    SQLTask:ParameterSize="-1" />
+                </SQLTask:SqlTaskData>
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+          <DTS:PrecedenceConstraints>
+            <DTS:PrecedenceConstraint
+              DTS:refId="Package\CON_FEL_Priority_Group In - Within Master Package - Shared with same Virthual Memory\CON_FLC_Execute_queue_1.PrecedenceConstraints[Constraint]"
+              DTS:CreationName=""
+              DTS:DTSID="{A3EFAD7A-F1C8-4853-BCD4-1E5CE8D631BD}"
+              DTS:EvalOp="3"
+              DTS:Expression="@[User::Package01] != &quot;&quot;"
+              DTS:From="Package\CON_FEL_Priority_Group In - Within Master Package - Shared with same Virthual Memory\CON_FLC_Execute_queue_1\TSK_EST_Get_package"
+              DTS:LogicalAnd="True"
+              DTS:ObjectName="Constraint"
+              DTS:To="Package\CON_FEL_Priority_Group In - Within Master Package - Shared with same Virthual Memory\CON_FLC_Execute_queue_1\TSK_EPKG_queue_1" />
+          </DTS:PrecedenceConstraints>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\CON_FEL_Priority_Group In - Within Master Package - Shared with same Virthual Memory\CON_FLC_Execute_queue_2"
+          DTS:CreationName="STOCK:FORLOOP"
+          DTS:Description="Loop until package variable is empty"
+          DTS:DTSID="{5091587E-5332-46E6-985A-5CE7474F3724}"
+          DTS:EvalExpression="@[User::PARALLEL_PROCESSES] &gt;= 2 &amp;&amp; @[User::EXECUTE_PACKAGES_IN]==1"
+          DTS:ExecutableType="STOCK:FORLOOP"
+          DTS:LocaleID="-1"
+          DTS:MaxConcurrent="1"
+          DTS:ObjectName="CON_FLC_Execute_queue_2">
+          <DTS:Variables />
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\CON_FEL_Priority_Group In - Within Master Package - Shared with same Virthual Memory\CON_FLC_Execute_queue_2\TSK_EPKG_queue_2"
+              DTS:CreationName="Microsoft.ExecutePackageTask"
+              DTS:DelayValidation="True"
+              DTS:Description="Execute package from queue"
+              DTS:DTSID="{2B2526C7-4ED5-48F5-B84D-AB497BD5BAA9}"
+              DTS:ExecutableType="Microsoft.ExecutePackageTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="TSK_EPKG_queue_2"
+              DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:TransactionOption="0">
+              <DTS:Variables />
+              <DTS:PropertyExpression
+                DTS:Name="PackageName">@[User::Package02]</DTS:PropertyExpression>
+              <DTS:ObjectData>
+                <ExecutePackageTask>
+                  <UseProjectReference>True</UseProjectReference>
+                </ExecutePackageTask>
+              </DTS:ObjectData>
+            </DTS:Executable>
+            <DTS:Executable
+              DTS:refId="Package\CON_FEL_Priority_Group In - Within Master Package - Shared with same Virthual Memory\CON_FLC_Execute_queue_2\TSK_EST_Get_package"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Get first package from queue"
+              DTS:DTSID="{98E50671-135A-4058-B74F-EB578259BDFF}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="TSK_EST_Get_package"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="2">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{97E141F0-733A-4413-8114-D9A19CB873AA}"
+                  SQLTask:SqlStatementSource="set nocount on;&#xA;&#xA;-- Declare temporary table to store the result of the delete&#xA;DECLARE @TmpTable TABLE (Package varchar(500));&#xA;-- Declare integer variable for counting the delete result&#xA;DECLARE @PackageCount int;&#xA;&#xA;-- Select first record, lock it, delete it and store name in temporary table&#xA;WITH cte as (&#xA;&#x9;&#x9;&#x9;SELECT&#x9;&#x9;top(1) PACKAGE_NAME AS Package&#xA;&#x9;&#x9;&#x9;FROM&#x9;&#x9;[dbo].[PackageQueue] WITH (rowlock, readpast)&#xA;&#x9;&#x9;&#x9;WHERE&#x9;&#x9;BATCH_NAME = ? AND PRIORITY_GROUP = ?&#xA;&#x9;&#x9;&#x9;ORDER BY&#x9;PRIORITY_ORDER&#xA;&#x9;&#x9;&#x9;)&#xA;DELETE FROM cte&#xA;output deleted.Package INTO @TmpTable&#xA;&#xA;-- Check if there is 1 record in temporary table&#xA;SELECT @PackageCount = count(*) FROM @TmpTable&#xA;if @PackageCount = 1&#xA;BEGIN&#xA;&#x9;-- Return package name&#xA;&#x9;SELECT Package, 1 AS EXECUTE_PACKAGES FROM @TmpTable&#xA;END&#xA;ELSE&#xA;BEGIN&#xA;&#x9;-- Temporary table was empty so queue was empty&#xA;&#x9;-- Return empty string to stop next precedence constraint&#xA;&#x9;SELECT '' as Package, 0 AS EXECUTE_PACKAGES&#xA;END&#xA;"
+                  SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                  <SQLTask:ResultBinding
+                    SQLTask:ResultName="Package"
+                    SQLTask:DtsVariableName="User::Package02" />
+                  <SQLTask:ResultBinding
+                    SQLTask:ResultName="EXECUTE_PACKAGES"
+                    SQLTask:DtsVariableName="User::EXECUTE_PACKAGES_IN" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="0"
+                    SQLTask:DtsVariableName="User::BATCH_NAME"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="129"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="1"
+                    SQLTask:DtsVariableName="User::CURRENT_PRIORITY_GROUP_IN"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="3"
+                    SQLTask:ParameterSize="-1" />
+                </SQLTask:SqlTaskData>
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+          <DTS:PrecedenceConstraints>
+            <DTS:PrecedenceConstraint
+              DTS:refId="Package\CON_FEL_Priority_Group In - Within Master Package - Shared with same Virthual Memory\CON_FLC_Execute_queue_2.PrecedenceConstraints[Constraint]"
+              DTS:CreationName=""
+              DTS:DTSID="{52DD2BF7-25E4-46E9-98E4-AD28942E9EBE}"
+              DTS:EvalOp="3"
+              DTS:Expression="@[User::Package02] != &quot;&quot;"
+              DTS:From="Package\CON_FEL_Priority_Group In - Within Master Package - Shared with same Virthual Memory\CON_FLC_Execute_queue_2\TSK_EST_Get_package"
+              DTS:LogicalAnd="True"
+              DTS:ObjectName="Constraint"
+              DTS:To="Package\CON_FEL_Priority_Group In - Within Master Package - Shared with same Virthual Memory\CON_FLC_Execute_queue_2\TSK_EPKG_queue_2" />
+          </DTS:PrecedenceConstraints>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\CON_FEL_Priority_Group In - Within Master Package - Shared with same Virthual Memory\CON_FLC_Execute_queue_3"
+          DTS:CreationName="STOCK:FORLOOP"
+          DTS:Description="Loop until package variable is empty"
+          DTS:DTSID="{4F5EF0D2-8B05-4138-826B-3192A267AB39}"
+          DTS:EvalExpression="@[User::PARALLEL_PROCESSES] &gt;= 3 &amp;&amp; @[User::EXECUTE_PACKAGES_IN]==1"
+          DTS:ExecutableType="STOCK:FORLOOP"
+          DTS:LocaleID="-1"
+          DTS:MaxConcurrent="1"
+          DTS:ObjectName="CON_FLC_Execute_queue_3">
+          <DTS:Variables />
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\CON_FEL_Priority_Group In - Within Master Package - Shared with same Virthual Memory\CON_FLC_Execute_queue_3\TSK_EPKG_queue_3"
+              DTS:CreationName="Microsoft.ExecutePackageTask"
+              DTS:DelayValidation="True"
+              DTS:Description="Execute package from queue"
+              DTS:DTSID="{D1E69693-7666-4282-A8BC-B62FCA01998A}"
+              DTS:ExecutableType="Microsoft.ExecutePackageTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="TSK_EPKG_queue_3"
+              DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:TransactionOption="0">
+              <DTS:Variables />
+              <DTS:PropertyExpression
+                DTS:Name="PackageName">@[User::Package03]</DTS:PropertyExpression>
+              <DTS:ObjectData>
+                <ExecutePackageTask>
+                  <UseProjectReference>True</UseProjectReference>
+                </ExecutePackageTask>
+              </DTS:ObjectData>
+            </DTS:Executable>
+            <DTS:Executable
+              DTS:refId="Package\CON_FEL_Priority_Group In - Within Master Package - Shared with same Virthual Memory\CON_FLC_Execute_queue_3\TSK_EST_Get_package"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Get first package from queue"
+              DTS:DTSID="{AA3E7741-296A-4701-B993-177E5E3A1097}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="TSK_EST_Get_package"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="0">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{97E141F0-733A-4413-8114-D9A19CB873AA}"
+                  SQLTask:SqlStatementSource="set nocount on;&#xA;&#xA;-- Declare temporary table to store the result of the delete&#xA;DECLARE @TmpTable TABLE (Package varchar(500));&#xA;-- Declare integer variable for counting the delete result&#xA;DECLARE @PackageCount int;&#xA;&#xA;-- Select first record, lock it, delete it and store name in temporary table&#xA;WITH cte as (&#xA;&#x9;&#x9;&#x9;SELECT&#x9;&#x9;top(1) PACKAGE_NAME AS Package&#xA;&#x9;&#x9;&#x9;FROM&#x9;&#x9;[dbo].[PackageQueue] WITH (rowlock, readpast)&#xA;&#x9;&#x9;&#x9;WHERE&#x9;&#x9;BATCH_NAME = ? AND PRIORITY_GROUP = ?&#xA;&#x9;&#x9;&#x9;ORDER BY&#x9;PRIORITY_ORDER&#xA;&#x9;&#x9;&#x9;)&#xA;DELETE FROM cte&#xA;output deleted.Package INTO @TmpTable&#xA;&#xA;-- Check if there is 1 record in temporary table&#xA;SELECT @PackageCount = count(*) FROM @TmpTable&#xA;if @PackageCount = 1&#xA;BEGIN&#xA;&#x9;-- Return package name&#xA;&#x9;SELECT Package, 1 AS EXECUTE_PACKAGES FROM @TmpTable&#xA;END&#xA;ELSE&#xA;BEGIN&#xA;&#x9;-- Temporary table was empty so queue was empty&#xA;&#x9;-- Return empty string to stop next precedence constraint&#xA;&#x9;SELECT '' as Package, 0 AS EXECUTE_PACKAGES&#xA;END&#xA;"
+                  SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                  <SQLTask:ResultBinding
+                    SQLTask:ResultName="Package"
+                    SQLTask:DtsVariableName="User::Package03" />
+                  <SQLTask:ResultBinding
+                    SQLTask:ResultName="EXECUTE_PACKAGES"
+                    SQLTask:DtsVariableName="User::EXECUTE_PACKAGES_IN" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="0"
+                    SQLTask:DtsVariableName="User::BATCH_NAME"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="129"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="1"
+                    SQLTask:DtsVariableName="User::CURRENT_PRIORITY_GROUP_IN"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="3"
+                    SQLTask:ParameterSize="-1" />
+                </SQLTask:SqlTaskData>
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+          <DTS:PrecedenceConstraints>
+            <DTS:PrecedenceConstraint
+              DTS:refId="Package\CON_FEL_Priority_Group In - Within Master Package - Shared with same Virthual Memory\CON_FLC_Execute_queue_3.PrecedenceConstraints[Constraint]"
+              DTS:CreationName=""
+              DTS:DTSID="{FDA63AC0-CB1C-4315-B10D-2355437550FB}"
+              DTS:EvalOp="3"
+              DTS:Expression="@[User::Package03] != &quot;&quot;"
+              DTS:From="Package\CON_FEL_Priority_Group In - Within Master Package - Shared with same Virthual Memory\CON_FLC_Execute_queue_3\TSK_EST_Get_package"
+              DTS:LogicalAnd="True"
+              DTS:ObjectName="Constraint"
+              DTS:To="Package\CON_FEL_Priority_Group In - Within Master Package - Shared with same Virthual Memory\CON_FLC_Execute_queue_3\TSK_EPKG_queue_3" />
+          </DTS:PrecedenceConstraints>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:ForEachVariableMappings>
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{DFF05EC7-7BAE-4ECE-8058-710E89D56D00}"
+          DTS:ObjectName="{DFF05EC7-7BAE-4ECE-8058-710E89D56D00}"
+          DTS:ValueIndex="1"
+          DTS:VariableName="User::EXECUTE_PACKAGES_IN" />
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{10F3E4D1-D168-4C2F-B26C-84AF8303D1E1}"
+          DTS:ObjectName="{10F3E4D1-D168-4C2F-B26C-84AF8303D1E1}"
+          DTS:ValueIndex="0"
+          DTS:VariableName="User::CURRENT_PRIORITY_GROUP_IN" />
+      </DTS:ForEachVariableMappings>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\CON_FEL_Priority_Group Out- Separate from Master package - Use separate Virtual memory"
+      DTS:CreationName="STOCK:FOREACHLOOP"
+      DTS:Description="Foreach Loop Container"
+      DTS:DTSID="{20c6b7bd-c8b9-457a-848c-76144519c327}"
+      DTS:ExecutableType="STOCK:FOREACHLOOP"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="CON_FEL_Priority_Group Out- Separate from Master package - Use separate Virtual memory">
+      <DTS:ForEachEnumerator
+        DTS:CreationName="Microsoft.ForEachADOEnumerator"
+        DTS:DTSID="{58d88ef0-2b9a-40aa-9d2a-6f0358fd0b30}"
+        DTS:ObjectName="{6CEF1BC5-D906-4D78-B02E-745C25ED456B}">
+        <DTS:ObjectData>
+          <FEEADO
+            EnumType="EnumerateRowsInFirstTable"
+            VarName="User::LOOPS_TO_EXECUTE_OUT" />
+        </DTS:ObjectData>
+      </DTS:ForEachEnumerator>
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\CON_FEL_Priority_Group Out- Separate from Master package - Use separate Virtual memory\CON_FLC_Execute_queue_1"
+          DTS:CreationName="STOCK:FORLOOP"
+          DTS:Description="Loop until package variable is empty"
+          DTS:DTSID="{17ea225e-3581-4f2f-aab4-14957318a0a5}"
+          DTS:EvalExpression="@[User::PARALLEL_PROCESSES] &gt;= 1&amp;&amp;@[User::EXECUTE_PACKAGES_OUT]==1"
+          DTS:ExecutableType="STOCK:FORLOOP"
+          DTS:LocaleID="-1"
+          DTS:MaxConcurrent="1"
+          DTS:ObjectName="CON_FLC_Execute_queue_1">
+          <DTS:Variables />
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\CON_FEL_Priority_Group Out- Separate from Master package - Use separate Virtual memory\CON_FLC_Execute_queue_1\Loop Until Complete"
+              DTS:CreationName="STOCK:FORLOOP"
+              DTS:Description="For Loop Container"
+              DTS:DTSID="{9ba22765-ebc6-4c1a-bfa9-91d501b9f45a}"
+              DTS:EvalExpression="@RunningPackageA &gt; 0"
+              DTS:ExecutableType="STOCK:FORLOOP"
+              DTS:InitExpression="@RunningPackageA = 1"
+              DTS:LocaleID="-1"
+              DTS:MaxConcurrent="1"
+              DTS:ObjectName="Loop Until Complete">
+              <DTS:Variables />
+              <DTS:Executables>
+                <DTS:Executable
+                  DTS:refId="Package\CON_FEL_Priority_Group Out- Separate from Master package - Use separate Virtual memory\CON_FLC_Execute_queue_1\Loop Until Complete\Wait for 10 sec"
+                  DTS:CreationName="Microsoft.ExecuteSQLTask"
+                  DTS:Description="Execute SQL Task"
+                  DTS:DTSID="{9d8d3971-7505-4887-9778-80d3b160c074}"
+                  DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+                  DTS:LocaleID="-1"
+                  DTS:ObjectName="Wait for 10 sec"
+                  DTS:ThreadHint="3">
+                  <DTS:Variables />
+                  <DTS:ObjectData>
+                    <SQLTask:SqlTaskData
+                      SQLTask:Connection="{9712569C-61C1-4C01-9255-2AB5B70A9CBA}"
+                      SQLTask:SqlStatementSource="WAITFOR DELAY '00:00:10';&#xA;&#xA;select count(*) &#xA; from catalog.executions &#xA;where [status] = 2 and package_name = ?&#xA;"
+                      SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                      <SQLTask:ResultBinding
+                        SQLTask:ResultName="0"
+                        SQLTask:DtsVariableName="User::RunningPackageA" />
+                      <SQLTask:ParameterBinding
+                        SQLTask:ParameterName="0"
+                        SQLTask:DtsVariableName="User::PackageA"
+                        SQLTask:ParameterDirection="Input"
+                        SQLTask:DataType="129"
+                        SQLTask:ParameterSize="-1" />
+                    </SQLTask:SqlTaskData>
+                  </DTS:ObjectData>
+                </DTS:Executable>
+              </DTS:Executables>
+            </DTS:Executable>
+            <DTS:Executable
+              DTS:refId="Package\CON_FEL_Priority_Group Out- Separate from Master package - Use separate Virtual memory\CON_FLC_Execute_queue_1\PRC_EPKG_queue_1"
+              DTS:CreationName="Microsoft.ExecuteProcess"
+              DTS:Description="Execute Process Task"
+              DTS:DTSID="{a6f9bf5c-c3b3-459d-9c96-ad6f198c2434}"
+              DTS:ExecutableType="Microsoft.ExecuteProcess"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="PRC_EPKG_queue_1"
+              DTS:ThreadHint="3">
+              <DTS:Variables />
+              <DTS:PropertyExpression
+                DTS:Name="Arguments">"/isserver" + " \"\\SSISDB\\" + @[$Project::SSISDB_Parent_Folder]  + "\\" + @[User::PackageA] + "\""
+
+ + 
+" /SET \\Package.Variables[User::LOAD_DATETIME].Properties[Value];\"" +  @[User::LOAD_DATETIME_STRING] + "\""
+ 
+ +
+ " /SET \\Package.Variables[User::LO_DATETIME].Properties[Value];\"" + @[User::LO_DATETIME_STRING] + "\""
+  
++ 
+" /SET \\Package.Variables[User::HI_DATETIME].Properties[Value];\"" +  @[User::HI_DATETIME_STRING] + "\""
+  
++ 
+" /SET \\Package.Variables[User::BATCH_LOG_ID].Properties[Value];\"" +  (DT_STR, 30, 1252) @[User::BATCH_LOG_ID] + "\"" 
+  
++ 
+" /SET \\Package.Variables[User::BATCH_NAME].Properties[Value];\"" +  @[User::BATCH_NAME] + "\"" 
+ 
++  
+" /SET \\Package.Variables[User::ACTIVE_DATABASE_SERVER].Properties[Value];\"" +  @[User::ACTIVE_DATABASE_SERVER] + "\""
+  
++ 
+" /SET \\Package.Variables[User::COMPARISON_DATABASE_SERVER].Properties[Value];\"" +  @[User::COMPARISON_DATABASE_SERVER] + "\""
++ 
+" /SET \\Package.Variables[$Project::CM_LANDING_CONN_STRING];\\\"\"" + @[$Project::CM_LANDING_CONN_STRING] + "\\\"\""
++ 
+" /SET \\Package.Variables[$Project::CM_METADATA_DB_CONN_STRING];\\\"\"" +  @[$Project::CM_METADATA_DB_CONN_STRING] + "\\\"\""
++ 
+" /SET \\Package.Variables[$Project::CM_STAGING_DELTA_CONN_STRING];\\\"\"" + @[$Project::CM_STAGING_DELTA_CONN_STRING] +"\\\"\""
++ 
+" /SET \\Package.Variables[$Project::CM_SSISDB_CONN_STRING];\\\"\"" +  @[$Project::CM_SSISDB_CONN_STRING] + "\\\"\""
++ 
+" /SET \\Package.Variables[$Project::CM_STAGING_MEMORY_CONN_STRING];\\\"\"" +  @[$Project::CM_STAGING_MEMORY_CONN_STRING] +"\\\"\""</DTS:PropertyExpression>
+              <DTS:ObjectData>
+                <ExecuteProcessData
+                  Executable="C:\Program Files (x86)\Microsoft SQL Server\130\DTS\Binn\DTExec.exe"
+                  RequireFullFileName="False"
+                  Arguments="/isserver &quot;\SSISDB\Staging\PRJ-Staging-SAC\&quot; /SET \Package.Variables[User::LOAD_DATETIME].Properties[Value];&quot;1-1-1900 0:0:0&quot; /SET \Package.Variables[User::LO_DATETIME].Properties[Value];&quot;1-1-1900 0:0:0&quot; /SET \Package.Variables[User::HI_DATETIME].Properties[Value];&quot;12-31-9000 0:0:0&quot; /SET \Package.Variables[User::BATCH_LOG_ID].Properties[Value];&quot;0&quot; /SET \Package.Variables[User::BATCH_NAME].Properties[Value];&quot;&quot; /SET \Package.Variables[User::ACTIVE_DATABASE_SERVER].Properties[Value];&quot;&quot; /SET \Package.Variables[User::COMPARISON_DATABASE_SERVER].Properties[Value];&quot;&quot; /SET \Package.Variables[$Project::CM_LANDING_CONN_STRING];\&quot;&quot;Data Source=APU-VM047;Initial Catalog=TestDb;Provider=SQLNCLI11.1;Packet Size=32767;Integrated Security=SSPI;\&quot;&quot; /SET \Package.Variables[$Project::CM_METADATA_DB_CONN_STRING];\&quot;&quot;Data Source=APU-VM047;Initial Catalog=MetadataDB;Provider=SQLNCLI11.1;Packet Size=32767;Integrated Security=SSPI;\&quot;&quot; /SET \Package.Variables[$Project::CM_STAGING_DELTA_CONN_STRING];\&quot;&quot;Data Source=APU-VM047;Initial Catalog=StagingDelta;Provider=SQLNCLI11.1;Packet Size=32767;Integrated Security=SSPI;\&quot;&quot; /SET \Package.Variables[$Project::CM_SSISDB_CONN_STRING];\&quot;&quot;Data Source=APU-VM047;Initial Catalog=SSISDB;Provider=SQLNCLI11.1;Packet Size=32767;Integrated Security=SSPI;\&quot;&quot; /SET \Package.Variables[$Project::CM_STAGING_MEMORY_CONN_STRING];\&quot;&quot;Data Source=APU-VM047;Initial Catalog=StagingMemory;Provider=SQLNCLI11.1;Packet Size=32767;Integrated Security=SSPI;\&quot;&quot;" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+            <DTS:Executable
+              DTS:refId="Package\CON_FEL_Priority_Group Out- Separate from Master package - Use separate Virtual memory\CON_FLC_Execute_queue_1\TSK_EST_Get_package"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Get first package from queue"
+              DTS:DTSID="{82df1551-e11f-4e06-8ffa-f1dc33ee684b}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="TSK_EST_Get_package"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="3">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{97E141F0-733A-4413-8114-D9A19CB873AA}"
+                  SQLTask:SqlStatementSource="set nocount on;&#xA;&#xA;-- Declare temporary table to store the result of the delete&#xA;DECLARE @TmpTable TABLE (Package varchar(255));&#xA;-- Declare integer variable for counting the delete result&#xA;DECLARE @PackageCount int;&#xA;&#xA;-- Select first record, lock it, delete it and store name in temporary table&#xA;WITH cte as (&#xA;   SELECT  top(1) PACKAGE_NAME AS Package&#xA;   FROM  [dbo].[PackageQueue] WITH (rowlock, readpast)&#xA;   WHERE  BATCH_NAME = ? AND PRIORITY_GROUP = ?&#xA;   ORDER BY PRIORITY_ORDER&#xA;   )&#xA;DELETE FROM cte&#xA;output deleted.Package INTO @TmpTable&#xA;&#xA;-- Check if there is 1 record in temporary table&#xA;SELECT @PackageCount = count(*) FROM @TmpTable&#xA;if @PackageCount = 1&#xA;BEGIN&#xA; -- Return package name&#xA; SELECT Package, 1 AS EXECUTE_PACKAGES FROM @TmpTable&#xA;END&#xA;ELSE&#xA;BEGIN&#xA; -- Temporary table was empty so queue was empty&#xA; -- Return empty string to stop next precedence constraint&#xA; SELECT '' as Package, 0 AS EXECUTE_PACKAGES&#xA;END&#xA;"
+                  SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                  <SQLTask:ResultBinding
+                    SQLTask:ResultName="Package"
+                    SQLTask:DtsVariableName="User::PackageA" />
+                  <SQLTask:ResultBinding
+                    SQLTask:ResultName="EXECUTE_PACKAGES"
+                    SQLTask:DtsVariableName="User::EXECUTE_PACKAGES_OUT" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="0"
+                    SQLTask:DtsVariableName="User::BATCH_NAME"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="129"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="1"
+                    SQLTask:DtsVariableName="User::CURRENT_PRIORITY_GROUP_OUT"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="3"
+                    SQLTask:ParameterSize="-1" />
+                </SQLTask:SqlTaskData>
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+          <DTS:PrecedenceConstraints>
+            <DTS:PrecedenceConstraint
+              DTS:refId="Package\CON_FEL_Priority_Group Out- Separate from Master package - Use separate Virtual memory\CON_FLC_Execute_queue_1.PrecedenceConstraints[Constraint]"
+              DTS:CreationName=""
+              DTS:DTSID="{1CB3A998-E232-426A-B087-10E49028CECD}"
+              DTS:EvalOp="3"
+              DTS:Expression="@[User::PackageA] != &quot;&quot;"
+              DTS:From="Package\CON_FEL_Priority_Group Out- Separate from Master package - Use separate Virtual memory\CON_FLC_Execute_queue_1\TSK_EST_Get_package"
+              DTS:LogicalAnd="True"
+              DTS:ObjectName="Constraint"
+              DTS:To="Package\CON_FEL_Priority_Group Out- Separate from Master package - Use separate Virtual memory\CON_FLC_Execute_queue_1\PRC_EPKG_queue_1" />
+            <DTS:PrecedenceConstraint
+              DTS:refId="Package\CON_FEL_Priority_Group Out- Separate from Master package - Use separate Virtual memory\CON_FLC_Execute_queue_1.PrecedenceConstraints[Constraint 2]"
+              DTS:CreationName=""
+              DTS:DTSID="{4438D935-527A-4096-85C3-2B94BE6222B8}"
+              DTS:EvalOp="1"
+              DTS:Expression="1==1"
+              DTS:From="Package\CON_FEL_Priority_Group Out- Separate from Master package - Use separate Virtual memory\CON_FLC_Execute_queue_1\PRC_EPKG_queue_1"
+              DTS:LogicalAnd="True"
+              DTS:ObjectName="Constraint 2"
+              DTS:To="Package\CON_FEL_Priority_Group Out- Separate from Master package - Use separate Virtual memory\CON_FLC_Execute_queue_1\Loop Until Complete" />
+          </DTS:PrecedenceConstraints>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\CON_FEL_Priority_Group Out- Separate from Master package - Use separate Virtual memory\CON_FLC_Execute_queue_2"
+          DTS:CreationName="STOCK:FORLOOP"
+          DTS:Description="Loop until package variable is empty"
+          DTS:DTSID="{1693ad0b-7e8e-4de4-9f38-bcac321b9d23}"
+          DTS:EvalExpression="@[User::PARALLEL_PROCESSES] &gt;= 2&amp;&amp;@[User::EXECUTE_PACKAGES_OUT]==1"
+          DTS:ExecutableType="STOCK:FORLOOP"
+          DTS:LocaleID="-1"
+          DTS:MaxConcurrent="1"
+          DTS:ObjectName="CON_FLC_Execute_queue_2">
+          <DTS:Variables />
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\CON_FEL_Priority_Group Out- Separate from Master package - Use separate Virtual memory\CON_FLC_Execute_queue_2\Loop Until Complete"
+              DTS:CreationName="STOCK:FORLOOP"
+              DTS:Description="For Loop Container"
+              DTS:DTSID="{b912fa71-d3db-4d9b-ac7c-a9a9820c0b68}"
+              DTS:EvalExpression="@RunningPackageB  &gt; 0"
+              DTS:ExecutableType="STOCK:FORLOOP"
+              DTS:InitExpression="@RunningPackageB  = 1"
+              DTS:LocaleID="-1"
+              DTS:MaxConcurrent="1"
+              DTS:ObjectName="Loop Until Complete">
+              <DTS:Variables />
+              <DTS:Executables>
+                <DTS:Executable
+                  DTS:refId="Package\CON_FEL_Priority_Group Out- Separate from Master package - Use separate Virtual memory\CON_FLC_Execute_queue_2\Loop Until Complete\Wait for 10 sec"
+                  DTS:CreationName="Microsoft.ExecuteSQLTask"
+                  DTS:Description="Execute SQL Task"
+                  DTS:DTSID="{d7091010-ce2d-4213-b3bf-fe95d5cc91d3}"
+                  DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+                  DTS:LocaleID="-1"
+                  DTS:ObjectName="Wait for 10 sec"
+                  DTS:ThreadHint="4">
+                  <DTS:Variables />
+                  <DTS:ObjectData>
+                    <SQLTask:SqlTaskData
+                      SQLTask:Connection="{9712569C-61C1-4C01-9255-2AB5B70A9CBA}"
+                      SQLTask:SqlStatementSource="WAITFOR DELAY '00:00:10';&#xA;&#xA;select count(*) &#xA; from catalog.executions &#xA;where [status] = 2 and package_name = ?"
+                      SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                      <SQLTask:ResultBinding
+                        SQLTask:ResultName="0"
+                        SQLTask:DtsVariableName="User::RunningPackageB" />
+                      <SQLTask:ParameterBinding
+                        SQLTask:ParameterName="0"
+                        SQLTask:DtsVariableName="User::PackageB"
+                        SQLTask:ParameterDirection="Input"
+                        SQLTask:DataType="129"
+                        SQLTask:ParameterSize="-1" />
+                    </SQLTask:SqlTaskData>
+                  </DTS:ObjectData>
+                </DTS:Executable>
+              </DTS:Executables>
+            </DTS:Executable>
+            <DTS:Executable
+              DTS:refId="Package\CON_FEL_Priority_Group Out- Separate from Master package - Use separate Virtual memory\CON_FLC_Execute_queue_2\PRC_EPKG_queue_2"
+              DTS:CreationName="Microsoft.ExecuteProcess"
+              DTS:Description="Execute Process Task"
+              DTS:DTSID="{0f3dab3f-62a1-4e87-a319-58c205b98625}"
+              DTS:ExecutableType="Microsoft.ExecuteProcess"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="PRC_EPKG_queue_2"
+              DTS:ThreadHint="4">
+              <DTS:Variables />
+              <DTS:PropertyExpression
+                DTS:Name="Arguments">"/isserver" + " \"\\SSISDB\\" + @[$Project::SSISDB_Parent_Folder]  + "\\" + @[User::PackageB] + "\""
+
+ + 
+" /SET \\Package.Variables[User::LOAD_DATETIME].Properties[Value];\"" +  @[User::LOAD_DATETIME_STRING] + "\""
+ 
+ +
+ " /SET \\Package.Variables[User::LO_DATETIME].Properties[Value];\"" + @[User::LO_DATETIME_STRING] + "\""
+  
++ 
+" /SET \\Package.Variables[User::HI_DATETIME].Properties[Value];\"" +  @[User::HI_DATETIME_STRING] + "\""
+  
++ 
+" /SET \\Package.Variables[User::BATCH_LOG_ID].Properties[Value];\"" +  (DT_STR, 30, 1252) @[User::BATCH_LOG_ID] + "\"" 
+  
++ 
+" /SET \\Package.Variables[User::BATCH_NAME].Properties[Value];\"" +  @[User::BATCH_NAME] + "\"" 
+ 
++  
+" /SET \\Package.Variables[User::ACTIVE_DATABASE_SERVER].Properties[Value];\"" +  @[User::ACTIVE_DATABASE_SERVER] + "\""
+  
++ 
+" /SET \\Package.Variables[User::COMPARISON_DATABASE_SERVER].Properties[Value];\"" +  @[User::COMPARISON_DATABASE_SERVER] + "\""
++ 
+" /SET \\Package.Variables[$Project::CM_LANDING_CONN_STRING];\\\"\"" + @[$Project::CM_LANDING_CONN_STRING] + "\\\"\""
++ 
+" /SET \\Package.Variables[$Project::CM_METADATA_DB_CONN_STRING];\\\"\"" +  @[$Project::CM_METADATA_DB_CONN_STRING] + "\\\"\""
++ 
+" /SET \\Package.Variables[$Project::CM_STAGING_DELTA_CONN_STRING];\\\"\"" + @[$Project::CM_STAGING_DELTA_CONN_STRING] +"\\\"\""
++ 
+" /SET \\Package.Variables[$Project::CM_SSISDB_CONN_STRING];\\\"\"" +  @[$Project::CM_SSISDB_CONN_STRING] + "\\\"\""
++ 
+" /SET \\Package.Variables[$Project::CM_STAGING_MEMORY_CONN_STRING];\\\"\"" +  @[$Project::CM_STAGING_MEMORY_CONN_STRING] +"\\\"\""</DTS:PropertyExpression>
+              <DTS:ObjectData>
+                <ExecuteProcessData
+                  Executable="C:\Program Files (x86)\Microsoft SQL Server\130\DTS\Binn\DTExec.exe"
+                  RequireFullFileName="False"
+                  Arguments="/isserver &quot;\SSISDB\Staging\PRJ-Staging-SAC\&quot; /SET \Package.Variables[User::LOAD_DATETIME].Properties[Value];&quot;1-1-1900 0:0:0&quot; /SET \Package.Variables[User::LO_DATETIME].Properties[Value];&quot;1-1-1900 0:0:0&quot; /SET \Package.Variables[User::HI_DATETIME].Properties[Value];&quot;12-31-9000 0:0:0&quot; /SET \Package.Variables[User::BATCH_LOG_ID].Properties[Value];&quot;0&quot; /SET \Package.Variables[User::BATCH_NAME].Properties[Value];&quot;&quot; /SET \Package.Variables[User::ACTIVE_DATABASE_SERVER].Properties[Value];&quot;&quot; /SET \Package.Variables[User::COMPARISON_DATABASE_SERVER].Properties[Value];&quot;&quot; /SET \Package.Variables[$Project::CM_LANDING_CONN_STRING];\&quot;&quot;Data Source=APU-VM047;Initial Catalog=TestDb;Provider=SQLNCLI11.1;Packet Size=32767;Integrated Security=SSPI;\&quot;&quot; /SET \Package.Variables[$Project::CM_METADATA_DB_CONN_STRING];\&quot;&quot;Data Source=APU-VM047;Initial Catalog=MetadataDB;Provider=SQLNCLI11.1;Packet Size=32767;Integrated Security=SSPI;\&quot;&quot; /SET \Package.Variables[$Project::CM_STAGING_DELTA_CONN_STRING];\&quot;&quot;Data Source=APU-VM047;Initial Catalog=StagingDelta;Provider=SQLNCLI11.1;Packet Size=32767;Integrated Security=SSPI;\&quot;&quot; /SET \Package.Variables[$Project::CM_SSISDB_CONN_STRING];\&quot;&quot;Data Source=APU-VM047;Initial Catalog=SSISDB;Provider=SQLNCLI11.1;Packet Size=32767;Integrated Security=SSPI;\&quot;&quot; /SET \Package.Variables[$Project::CM_STAGING_MEMORY_CONN_STRING];\&quot;&quot;Data Source=APU-VM047;Initial Catalog=StagingMemory;Provider=SQLNCLI11.1;Packet Size=32767;Integrated Security=SSPI;\&quot;&quot;" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+            <DTS:Executable
+              DTS:refId="Package\CON_FEL_Priority_Group Out- Separate from Master package - Use separate Virtual memory\CON_FLC_Execute_queue_2\TSK_EST_Get_package"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Get first package from queue"
+              DTS:DTSID="{d5d7010e-cfc6-4d60-a3ce-ad97d339be1c}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="TSK_EST_Get_package"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="4">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{97E141F0-733A-4413-8114-D9A19CB873AA}"
+                  SQLTask:SqlStatementSource="set nocount on;&#xA;&#xA;-- Declare temporary table to store the result of the delete&#xA;DECLARE @TmpTable TABLE (Package varchar(255));&#xA;-- Declare integer variable for counting the delete result&#xA;DECLARE @PackageCount int;&#xA;&#xA;-- Select first record, lock it, delete it and store name in temporary table&#xA;WITH cte as (&#xA;   SELECT  top(1) PACKAGE_NAME AS Package&#xA;   FROM  [dbo].[PackageQueue] WITH (rowlock, readpast)&#xA;   WHERE  BATCH_NAME = ? AND PRIORITY_GROUP = ?&#xA;   ORDER BY PRIORITY_ORDER&#xA;   )&#xA;DELETE FROM cte&#xA;output deleted.Package INTO @TmpTable&#xA;&#xA;-- Check if there is 1 record in temporary table&#xA;SELECT @PackageCount = count(*) FROM @TmpTable&#xA;if @PackageCount = 1&#xA;BEGIN&#xA; -- Return package name&#xA; SELECT Package, 1 AS EXECUTE_PACKAGES FROM @TmpTable&#xA;END&#xA;ELSE&#xA;BEGIN&#xA; -- Temporary table was empty so queue was empty&#xA; -- Return empty string to stop next precedence constraint&#xA; SELECT '' as Package, 0 AS EXECUTE_PACKAGES&#xA;END&#xA;"
+                  SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                  <SQLTask:ResultBinding
+                    SQLTask:ResultName="Package"
+                    SQLTask:DtsVariableName="User::PackageB" />
+                  <SQLTask:ResultBinding
+                    SQLTask:ResultName="EXECUTE_PACKAGES"
+                    SQLTask:DtsVariableName="User::EXECUTE_PACKAGES_OUT" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="0"
+                    SQLTask:DtsVariableName="User::BATCH_NAME"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="129"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="1"
+                    SQLTask:DtsVariableName="User::CURRENT_PRIORITY_GROUP_OUT"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="3"
+                    SQLTask:ParameterSize="-1" />
+                </SQLTask:SqlTaskData>
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+          <DTS:PrecedenceConstraints>
+            <DTS:PrecedenceConstraint
+              DTS:refId="Package\CON_FEL_Priority_Group Out- Separate from Master package - Use separate Virtual memory\CON_FLC_Execute_queue_2.PrecedenceConstraints[Constraint]"
+              DTS:CreationName=""
+              DTS:DTSID="{C23681D0-1951-4CB7-8950-97C6EE3B93A5}"
+              DTS:EvalOp="3"
+              DTS:Expression="@[User::PackageB] != &quot;&quot;"
+              DTS:From="Package\CON_FEL_Priority_Group Out- Separate from Master package - Use separate Virtual memory\CON_FLC_Execute_queue_2\TSK_EST_Get_package"
+              DTS:LogicalAnd="True"
+              DTS:ObjectName="Constraint"
+              DTS:To="Package\CON_FEL_Priority_Group Out- Separate from Master package - Use separate Virtual memory\CON_FLC_Execute_queue_2\PRC_EPKG_queue_2" />
+            <DTS:PrecedenceConstraint
+              DTS:refId="Package\CON_FEL_Priority_Group Out- Separate from Master package - Use separate Virtual memory\CON_FLC_Execute_queue_2.PrecedenceConstraints[Constraint 1]"
+              DTS:CreationName=""
+              DTS:DTSID="{C79105A4-24C7-4499-98F2-BE2A07F97803}"
+              DTS:EvalOp="1"
+              DTS:Expression="1 == 1"
+              DTS:From="Package\CON_FEL_Priority_Group Out- Separate from Master package - Use separate Virtual memory\CON_FLC_Execute_queue_2\PRC_EPKG_queue_2"
+              DTS:LogicalAnd="True"
+              DTS:ObjectName="Constraint 1"
+              DTS:To="Package\CON_FEL_Priority_Group Out- Separate from Master package - Use separate Virtual memory\CON_FLC_Execute_queue_2\Loop Until Complete"
+              DTS:Value="2" />
+          </DTS:PrecedenceConstraints>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\CON_FEL_Priority_Group Out- Separate from Master package - Use separate Virtual memory\CON_FLC_Execute_queue_3"
+          DTS:CreationName="STOCK:FORLOOP"
+          DTS:Description="Loop until package variable is empty"
+          DTS:DTSID="{f355f572-cfb1-4218-8f81-212e6ecd97bd}"
+          DTS:EvalExpression="@[User::PARALLEL_PROCESSES] &gt;= 3&amp;&amp;@[User::EXECUTE_PACKAGES_OUT]==1"
+          DTS:ExecutableType="STOCK:FORLOOP"
+          DTS:LocaleID="-1"
+          DTS:MaxConcurrent="1"
+          DTS:ObjectName="CON_FLC_Execute_queue_3">
+          <DTS:Variables />
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\CON_FEL_Priority_Group Out- Separate from Master package - Use separate Virtual memory\CON_FLC_Execute_queue_3\Loop Until Complete"
+              DTS:CreationName="STOCK:FORLOOP"
+              DTS:Description="For Loop Container"
+              DTS:DTSID="{738b7613-844b-423b-8520-6a753e3e4f20}"
+              DTS:EvalExpression="@RunningPackageC  &gt; 0"
+              DTS:ExecutableType="STOCK:FORLOOP"
+              DTS:InitExpression="@RunningPackageC  = 1"
+              DTS:LocaleID="-1"
+              DTS:MaxConcurrent="1"
+              DTS:ObjectName="Loop Until Complete">
+              <DTS:Variables />
+              <DTS:Executables>
+                <DTS:Executable
+                  DTS:refId="Package\CON_FEL_Priority_Group Out- Separate from Master package - Use separate Virtual memory\CON_FLC_Execute_queue_3\Loop Until Complete\Wait for 10 sec"
+                  DTS:CreationName="Microsoft.ExecuteSQLTask"
+                  DTS:Description="Execute SQL Task"
+                  DTS:DTSID="{4dd6429d-0bdb-4d43-a58a-e1ef35c9d550}"
+                  DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+                  DTS:LocaleID="-1"
+                  DTS:ObjectName="Wait for 10 sec"
+                  DTS:ThreadHint="5">
+                  <DTS:Variables />
+                  <DTS:ObjectData>
+                    <SQLTask:SqlTaskData
+                      SQLTask:Connection="{9712569C-61C1-4C01-9255-2AB5B70A9CBA}"
+                      SQLTask:SqlStatementSource="WAITFOR DELAY '00:00:10';&#xA;&#xA;select count(*) &#xA; from catalog.executions &#xA;where [status] = 2 and package_name = ?"
+                      SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                      <SQLTask:ResultBinding
+                        SQLTask:ResultName="0"
+                        SQLTask:DtsVariableName="User::RunningPackageC" />
+                      <SQLTask:ParameterBinding
+                        SQLTask:ParameterName="0"
+                        SQLTask:DtsVariableName="User::PackageC"
+                        SQLTask:ParameterDirection="Input"
+                        SQLTask:DataType="129"
+                        SQLTask:ParameterSize="-1" />
+                    </SQLTask:SqlTaskData>
+                  </DTS:ObjectData>
+                </DTS:Executable>
+              </DTS:Executables>
+            </DTS:Executable>
+            <DTS:Executable
+              DTS:refId="Package\CON_FEL_Priority_Group Out- Separate from Master package - Use separate Virtual memory\CON_FLC_Execute_queue_3\PRC_EPKG_queue_3"
+              DTS:CreationName="Microsoft.ExecuteProcess"
+              DTS:Description="Execute Process Task"
+              DTS:DTSID="{6194d2c9-4ff2-4278-b23e-95ace5b8be5b}"
+              DTS:ExecutableType="Microsoft.ExecuteProcess"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="PRC_EPKG_queue_3"
+              DTS:ThreadHint="5">
+              <DTS:Variables />
+              <DTS:PropertyExpression
+                DTS:Name="Arguments">"/isserver" + " \"\\SSISDB\\" + @[$Project::SSISDB_Parent_Folder]  + "\\" + @[User::PackageC] + "\""
+
+ + 
+" /SET \\Package.Variables[User::LOAD_DATETIME].Properties[Value];\"" +  @[User::LOAD_DATETIME_STRING] + "\""
+ 
+ +
+ " /SET \\Package.Variables[User::LO_DATETIME].Properties[Value];\"" + @[User::LO_DATETIME_STRING] + "\""
+  
++ 
+" /SET \\Package.Variables[User::HI_DATETIME].Properties[Value];\"" +  @[User::HI_DATETIME_STRING] + "\""
+  
++ 
+" /SET \\Package.Variables[User::BATCH_LOG_ID].Properties[Value];\"" +  (DT_STR, 30, 1252) @[User::BATCH_LOG_ID] + "\"" 
+  
++ 
+" /SET \\Package.Variables[User::BATCH_NAME].Properties[Value];\"" +  @[User::BATCH_NAME] + "\"" 
+ 
++  
+" /SET \\Package.Variables[User::ACTIVE_DATABASE_SERVER].Properties[Value];\"" +  @[User::ACTIVE_DATABASE_SERVER] + "\""
+  
++ 
+" /SET \\Package.Variables[User::COMPARISON_DATABASE_SERVER].Properties[Value];\"" +  @[User::COMPARISON_DATABASE_SERVER] + "\""
++ 
+" /SET \\Package.Variables[$Project::CM_LANDING_CONN_STRING];\\\"\"" + @[$Project::CM_LANDING_CONN_STRING] + "\\\"\""
++ 
+" /SET \\Package.Variables[$Project::CM_METADATA_DB_CONN_STRING];\\\"\"" +  @[$Project::CM_METADATA_DB_CONN_STRING] + "\\\"\""
++ 
+" /SET \\Package.Variables[$Project::CM_STAGING_DELTA_CONN_STRING];\\\"\"" + @[$Project::CM_STAGING_DELTA_CONN_STRING] +"\\\"\""
++ 
+" /SET \\Package.Variables[$Project::CM_SSISDB_CONN_STRING];\\\"\"" +  @[$Project::CM_SSISDB_CONN_STRING] + "\\\"\""
++ 
+" /SET \\Package.Variables[$Project::CM_STAGING_MEMORY_CONN_STRING];\\\"\"" +  @[$Project::CM_STAGING_MEMORY_CONN_STRING] +"\\\"\""</DTS:PropertyExpression>
+              <DTS:ObjectData>
+                <ExecuteProcessData
+                  Executable="C:\Program Files (x86)\Microsoft SQL Server\130\DTS\Binn\DTExec.exe"
+                  RequireFullFileName="False"
+                  Arguments="/isserver &quot;\SSISDB\Staging\PRJ-Staging-SAC\&quot; /SET \Package.Variables[User::LOAD_DATETIME].Properties[Value];&quot;1-1-1900 0:0:0&quot; /SET \Package.Variables[User::LO_DATETIME].Properties[Value];&quot;1-1-1900 0:0:0&quot; /SET \Package.Variables[User::HI_DATETIME].Properties[Value];&quot;12-31-9000 0:0:0&quot; /SET \Package.Variables[User::BATCH_LOG_ID].Properties[Value];&quot;0&quot; /SET \Package.Variables[User::BATCH_NAME].Properties[Value];&quot;&quot; /SET \Package.Variables[User::ACTIVE_DATABASE_SERVER].Properties[Value];&quot;&quot; /SET \Package.Variables[User::COMPARISON_DATABASE_SERVER].Properties[Value];&quot;&quot; /SET \Package.Variables[$Project::CM_LANDING_CONN_STRING];\&quot;&quot;Data Source=APU-VM047;Initial Catalog=TestDb;Provider=SQLNCLI11.1;Packet Size=32767;Integrated Security=SSPI;\&quot;&quot; /SET \Package.Variables[$Project::CM_METADATA_DB_CONN_STRING];\&quot;&quot;Data Source=APU-VM047;Initial Catalog=MetadataDB;Provider=SQLNCLI11.1;Packet Size=32767;Integrated Security=SSPI;\&quot;&quot; /SET \Package.Variables[$Project::CM_STAGING_DELTA_CONN_STRING];\&quot;&quot;Data Source=APU-VM047;Initial Catalog=StagingDelta;Provider=SQLNCLI11.1;Packet Size=32767;Integrated Security=SSPI;\&quot;&quot; /SET \Package.Variables[$Project::CM_SSISDB_CONN_STRING];\&quot;&quot;Data Source=APU-VM047;Initial Catalog=SSISDB;Provider=SQLNCLI11.1;Packet Size=32767;Integrated Security=SSPI;\&quot;&quot; /SET \Package.Variables[$Project::CM_STAGING_MEMORY_CONN_STRING];\&quot;&quot;Data Source=APU-VM047;Initial Catalog=StagingMemory;Provider=SQLNCLI11.1;Packet Size=32767;Integrated Security=SSPI;\&quot;&quot;" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+            <DTS:Executable
+              DTS:refId="Package\CON_FEL_Priority_Group Out- Separate from Master package - Use separate Virtual memory\CON_FLC_Execute_queue_3\TSK_EST_Get_package"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Get first package from queue"
+              DTS:DTSID="{1b19bfdc-3511-4297-bdf8-88d19469f0de}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="TSK_EST_Get_package"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="5">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{97E141F0-733A-4413-8114-D9A19CB873AA}"
+                  SQLTask:SqlStatementSource="set nocount on;&#xA;&#xA;-- Declare temporary table to store the result of the delete&#xA;DECLARE @TmpTable TABLE (Package varchar(255));&#xA;-- Declare integer variable for counting the delete result&#xA;DECLARE @PackageCount int;&#xA;&#xA;-- Select first record, lock it, delete it and store name in temporary table&#xA;WITH cte as (&#xA;   SELECT  top(1) PACKAGE_NAME AS Package&#xA;   FROM  [dbo].[PackageQueue] WITH (rowlock, readpast)&#xA;   WHERE  BATCH_NAME = ? AND PRIORITY_GROUP = ?&#xA;   ORDER BY PRIORITY_ORDER&#xA;   )&#xA;DELETE FROM cte&#xA;output deleted.Package INTO @TmpTable&#xA;&#xA;-- Check if there is 1 record in temporary table&#xA;SELECT @PackageCount = count(*) FROM @TmpTable&#xA;if @PackageCount = 1&#xA;BEGIN&#xA; -- Return package name&#xA; SELECT Package, 1 AS EXECUTE_PACKAGES FROM @TmpTable&#xA;END&#xA;ELSE&#xA;BEGIN&#xA; -- Temporary table was empty so queue was empty&#xA; -- Return empty string to stop next precedence constraint&#xA; SELECT '' as Package, 0 AS EXECUTE_PACKAGES&#xA;END&#xA;"
+                  SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                  <SQLTask:ResultBinding
+                    SQLTask:ResultName="Package"
+                    SQLTask:DtsVariableName="User::PackageC" />
+                  <SQLTask:ResultBinding
+                    SQLTask:ResultName="EXECUTE_PACKAGES"
+                    SQLTask:DtsVariableName="User::EXECUTE_PACKAGES_OUT" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="0"
+                    SQLTask:DtsVariableName="User::BATCH_NAME"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="129"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="1"
+                    SQLTask:DtsVariableName="User::CURRENT_PRIORITY_GROUP_OUT"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="3"
+                    SQLTask:ParameterSize="-1" />
+                </SQLTask:SqlTaskData>
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+          <DTS:PrecedenceConstraints>
+            <DTS:PrecedenceConstraint
+              DTS:refId="Package\CON_FEL_Priority_Group Out- Separate from Master package - Use separate Virtual memory\CON_FLC_Execute_queue_3.PrecedenceConstraints[Constraint]"
+              DTS:CreationName=""
+              DTS:DTSID="{3589874C-768D-4EA1-9EDB-410EDD650B38}"
+              DTS:EvalOp="3"
+              DTS:Expression="@[User::PackageC] != &quot;&quot;"
+              DTS:From="Package\CON_FEL_Priority_Group Out- Separate from Master package - Use separate Virtual memory\CON_FLC_Execute_queue_3\TSK_EST_Get_package"
+              DTS:LogicalAnd="True"
+              DTS:ObjectName="Constraint"
+              DTS:To="Package\CON_FEL_Priority_Group Out- Separate from Master package - Use separate Virtual memory\CON_FLC_Execute_queue_3\PRC_EPKG_queue_3" />
+            <DTS:PrecedenceConstraint
+              DTS:refId="Package\CON_FEL_Priority_Group Out- Separate from Master package - Use separate Virtual memory\CON_FLC_Execute_queue_3.PrecedenceConstraints[Constraint 1]"
+              DTS:CreationName=""
+              DTS:DTSID="{C5E9098E-05C5-4CE8-95DD-991FD073B0B1}"
+              DTS:EvalOp="1"
+              DTS:Expression="1==1"
+              DTS:From="Package\CON_FEL_Priority_Group Out- Separate from Master package - Use separate Virtual memory\CON_FLC_Execute_queue_3\PRC_EPKG_queue_3"
+              DTS:LogicalAnd="True"
+              DTS:ObjectName="Constraint 1"
+              DTS:To="Package\CON_FEL_Priority_Group Out- Separate from Master package - Use separate Virtual memory\CON_FLC_Execute_queue_3\Loop Until Complete" />
+          </DTS:PrecedenceConstraints>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:ForEachVariableMappings>
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{62DC8636-A994-4F03-935E-FFAA263CA021}"
+          DTS:ObjectName="{62DC8636-A994-4F03-935E-FFAA263CA021}"
+          DTS:ValueIndex="1"
+          DTS:VariableName="User::EXECUTE_PACKAGES_OUT" />
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{2797BDFA-7456-4E2F-B76E-3F0E4EB937B7}"
+          DTS:ObjectName="{2797BDFA-7456-4E2F-B76E-3F0E4EB937B7}"
+          DTS:ValueIndex="0"
+          DTS:VariableName="User::CURRENT_PRIORITY_GROUP_OUT" />
+      </DTS:ForEachVariableMappings>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\TSK_EST_Fill_Queue_1 (Shared)"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Fill the package queue"
+      DTS:DTSID="{E3BD32A0-D8DB-4AD7-8E4F-D74C18FB7CF0}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="3081"
+      DTS:ObjectName="TSK_EST_Fill_Queue_1 (Shared)"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{97E141F0-733A-4413-8114-D9A19CB873AA}"
+          SQLTask:SqlStatementSource="DELETE FROM [dbo].[PackageQueue] &#xA;WHERE BATCH_NAME = ?&#xA;AND PRIORITY_GROUP &lt; 50;&#xA;&#xA;INSERT INTO [dbo].[PackageQueue] (BATCH_NAME, PACKAGE_NAME, PRIORITY_GROUP, PRIORITY_ORDER)&#xA;SELECT BATCH_NAME, PACKAGE_NAME+'.dtsx', PRIORITY_GROUP, PRIORITY_ORDER FROM [dbo].[PackageData] &#xA;WHERE BATCH_NAME = ?&#xA;AND PACKAGE_ACTIVE = 1&#xA;AND PRIORITY_GROUP &lt; 50&#xA;AND COALESCE(LAST_LOAD_DATETIME , '1900-01-01') &lt;&gt; ?;&#xA;&#xA;SELECT DISTINCT PRIORITY_GROUP, 1 as EXECUTE_PACKAGES FROM [dbo].[PackageQueue] &#xA;WHERE BATCH_NAME = ?&#xA;     AND  PRIORITY_GROUP &lt; 50&#xA;ORDER BY PRIORITY_GROUP;"
+          SQLTask:ResultType="ResultSetType_Rowset" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="0"
+            SQLTask:DtsVariableName="User::LOOPS_TO_EXECUTE_IN" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::BATCH_NAME"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="129"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="1"
+            SQLTask:DtsVariableName="User::BATCH_NAME"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="129"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="2"
+            SQLTask:DtsVariableName="User::LOAD_DATETIME"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="7"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="3"
+            SQLTask:DtsVariableName="User::BATCH_NAME"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="129"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\TSK_EST_Fill_Queue_2 (Separate)"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Fill the package queue"
+      DTS:DTSID="{cbeb9c5e-ee94-4787-b8db-99bb4bcda675}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="3081"
+      DTS:ObjectName="TSK_EST_Fill_Queue_2 (Separate)"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="3">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{97E141F0-733A-4413-8114-D9A19CB873AA}"
+          SQLTask:SqlStatementSource="DELETE FROM [dbo].[PackageQueue]&#xA;WHERE BATCH_NAME = ? &#xA;AND PRIORITY_GROUP &gt;= 50;&#xA;&#xA;INSERT INTO [dbo].[PackageQueue](BATCH_NAME, PACKAGE_NAME, PRIORITY_GROUP, PRIORITY_ORDER)&#xA;SELECT BATCH_NAME, PACKAGE_NAME+'.dtsx', PRIORITY_GROUP, PRIORITY_ORDER FROM [dbo].[PackageData] &#xA;WHERE BATCH_NAME = ?&#xA;AND PACKAGE_ACTIVE = 1&#xA;AND PRIORITY_GROUP &gt;= 50&#xA;AND COALESCE(LAST_LOAD_DATETIME , '1900-01-01') &lt;&gt; ?;&#xA;&#xA;SELECT DISTINCT PRIORITY_GROUP, 1 as EXECUTE_PACKAGES FROM [dbo].[PackageQueue] &#xA;WHERE BATCH_NAME = ?&#xA;    AND PRIORITY_GROUP &gt;= 50&#xA;ORDER BY PRIORITY_GROUP;"
+          SQLTask:ResultType="ResultSetType_Rowset" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="0"
+            SQLTask:DtsVariableName="User::LOOPS_TO_EXECUTE_OUT" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::BATCH_NAME"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="129"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="1"
+            SQLTask:DtsVariableName="User::BATCH_NAME"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="129"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="2"
+            SQLTask:DtsVariableName="User::LOAD_DATETIME"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="7"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="3"
+            SQLTask:DtsVariableName="User::BATCH_NAME"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="129"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{783B5014-4B4E-4A4C-B6DD-B20E533487A4}"
+      DTS:From="Package\TSK_EST_Fill_Queue_1 (Shared)"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\CON_FEL_Priority_Group In - Within Master Package - Shared with same Virthual Memory" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{051166A7-6CF9-4AE3-94D5-4563FAFBEFC2}"
+      DTS:From="Package\TSK_EST_Fill_Queue_2 (Separate)"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\CON_FEL_Priority_Group Out- Separate from Master package - Use separate Virtual memory" />
+  </DTS:PrecedenceConstraints>
+  <DTS:EventHandlers>
+    <DTS:EventHandler
+      DTS:refId="Package.EventHandlers[OnError]"
+      DTS:CreationName="OnError"
+      DTS:DTSID="{3FA5802D-FC70-4E1C-8827-5DE6AF7AFE5C}"
+      DTS:EventID="322332116"
+      DTS:EventName="OnError"
+      DTS:LocaleID="-1">
+      <DTS:Variables>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="The propagate property of the event"
+          DTS:DTSID="{84052CEB-1F73-4D38-B5E6-777974BB9E08}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="System"
+          DTS:ObjectName="Propagate">
+          <DTS:VariableValue
+            DTS:DataType="11">-1</DTS:VariableValue>
+        </DTS:Variable>
+      </DTS:Variables>
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnError]\EST_OnErrorLog"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:DTSID="{3517184F-9BD0-4042-954F-F8DA3AAB7E8A}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="EST_OnErrorLog"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{97E141F0-733A-4413-8114-D9A19CB873AA}"
+              SQLTask:SqlStatementSource="UPDATE [dbo].[BatchLog] SET LOAD_END_DATETIME = SYSDATETIME(), LOAD_STATUS = 'Failed' WHERE BATCH_LOG_ID = ?;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::BATCH_LOG_ID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:EventHandler>
+  </DTS:EventHandlers>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="175.2,41.6"
+          Id="Package\CON_FEL_Priority_Group In - Within Master Package - Shared with same Virthual Memory\CON_FLC_Execute_queue_1\TSK_EPKG_queue_1"
+          TopLeft="20.3,118.1" />
+        <NodeLayout
+          Size="190.4,41.6"
+          Id="Package\CON_FEL_Priority_Group In - Within Master Package - Shared with same Virthual Memory\CON_FLC_Execute_queue_1\TSK_EST_Get_package"
+          TopLeft="16.5,20.4999999999999" />
+        <EdgeLayout
+          Id="Package\CON_FEL_Priority_Group In - Within Master Package - Shared with same Virthual Memory\CON_FLC_Execute_queue_1.PrecedenceConstraints[Constraint]"
+          TopLeft="109.65,62.4999999999999">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,55.6000000000001"
+              Start="0,0"
+              End="0,48.1000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,48.1000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-95.758515625,16.0500000000001,191.51703125,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="232,215.2"
+          Size="232,257.6"
+          Id="Package\CON_FEL_Priority_Group In - Within Master Package - Shared with same Virthual Memory\CON_FLC_Execute_queue_1"
+          TopLeft="33.5,11.4999999999999" />
+        <NodeLayout
+          Size="176.8,41.6"
+          Id="Package\CON_FEL_Priority_Group In - Within Master Package - Shared with same Virthual Memory\CON_FLC_Execute_queue_2\TSK_EPKG_queue_2"
+          TopLeft="20.3,119.1" />
+        <NodeLayout
+          Size="190.4,41.6"
+          Id="Package\CON_FEL_Priority_Group In - Within Master Package - Shared with same Virthual Memory\CON_FLC_Execute_queue_2\TSK_EST_Get_package"
+          TopLeft="18.5,23.4999999999999" />
+        <EdgeLayout
+          Id="Package\CON_FEL_Priority_Group In - Within Master Package - Shared with same Virthual Memory\CON_FLC_Execute_queue_2.PrecedenceConstraints[Constraint]"
+          TopLeft="111.15,65.4999999999999">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,53.6000000000001"
+              Start="0,0"
+              End="0,46.1000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,46.1000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-8,15.0500000000001,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="222.4,216"
+          Size="222.4,259.2"
+          Id="Package\CON_FEL_Priority_Group In - Within Master Package - Shared with same Virthual Memory\CON_FLC_Execute_queue_2"
+          TopLeft="284.5,11.4999999999999" />
+        <NodeLayout
+          Size="176.8,41.6"
+          Id="Package\CON_FEL_Priority_Group In - Within Master Package - Shared with same Virthual Memory\CON_FLC_Execute_queue_3\TSK_EPKG_queue_3"
+          TopLeft="16.3,111.1" />
+        <NodeLayout
+          Size="176,41.6"
+          Id="Package\CON_FEL_Priority_Group In - Within Master Package - Shared with same Virthual Memory\CON_FLC_Execute_queue_3\TSK_EST_Get_package"
+          TopLeft="13.5,22.4999999999999" />
+        <EdgeLayout
+          Id="Package\CON_FEL_Priority_Group In - Within Master Package - Shared with same Virthual Memory\CON_FLC_Execute_queue_3.PrecedenceConstraints[Constraint]"
+          TopLeft="103.15,64.4999999999999">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,46.6000000000001"
+              Start="0,0"
+              End="0,39.1000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.1000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-8,11.5500000000001,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="201.6,204"
+          Size="201.6,247.2"
+          Id="Package\CON_FEL_Priority_Group In - Within Master Package - Shared with same Virthual Memory\CON_FLC_Execute_queue_3"
+          TopLeft="529.5,15.4999999999999" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="745.6,311.2"
+          Size="745.6,353.6"
+          Id="Package\CON_FEL_Priority_Group In - Within Master Package - Shared with same Virthual Memory"
+          TopLeft="1076.64285714286,275.671428571429" />
+        <NodeLayout
+          Size="184.8,41.6"
+          Id="Package\CON_FEL_Priority_Group Out- Separate from Master package - Use separate Virtual memory\CON_FLC_Execute_queue_1\Loop Until Complete\Wait for 10 sec"
+          TopLeft="18,37" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="222.4,124"
+          Size="222.4,167.2"
+          Id="Package\CON_FEL_Priority_Group Out- Separate from Master package - Use separate Virtual memory\CON_FLC_Execute_queue_1\Loop Until Complete"
+          TopLeft="19.5,181.5" />
+        <NodeLayout
+          Size="175.2,41.6"
+          Id="Package\CON_FEL_Priority_Group Out- Separate from Master package - Use separate Virtual memory\CON_FLC_Execute_queue_1\PRC_EPKG_queue_1"
+          TopLeft="46,93" />
+        <NodeLayout
+          Size="203.2,41.6"
+          Id="Package\CON_FEL_Priority_Group Out- Separate from Master package - Use separate Virtual memory\CON_FLC_Execute_queue_1\TSK_EST_Get_package"
+          TopLeft="31.5,15.4999999999999" />
+        <EdgeLayout
+          Id="Package\CON_FEL_Priority_Group Out- Separate from Master package - Use separate Virtual memory\CON_FLC_Execute_queue_1.PrecedenceConstraints[Constraint]"
+          TopLeft="133.25,57.4999999999999">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,35.5000000000001"
+              Start="0,0"
+              End="0,28.0000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.0000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-8,6.00000000000005,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\CON_FEL_Priority_Group Out- Separate from Master package - Use separate Virtual memory\CON_FLC_Execute_queue_1.PrecedenceConstraints[Constraint 2]"
+          TopLeft="132,135">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,46.5"
+              Start="0,0"
+              End="0,39">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-8,11.5,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="263.2,400.8"
+          Size="263.2,444"
+          Id="Package\CON_FEL_Priority_Group Out- Separate from Master package - Use separate Virtual memory\CON_FLC_Execute_queue_1"
+          TopLeft="12.5,10.4999999999999" />
+        <NodeLayout
+          Size="177.6,41.6"
+          Id="Package\CON_FEL_Priority_Group Out- Separate from Master package - Use separate Virtual memory\CON_FLC_Execute_queue_2\Loop Until Complete\Wait for 10 sec"
+          TopLeft="16,33" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="208,112"
+          Size="208,155.2"
+          Id="Package\CON_FEL_Priority_Group Out- Separate from Master package - Use separate Virtual memory\CON_FLC_Execute_queue_2\Loop Until Complete"
+          TopLeft="14.5,189.5" />
+        <NodeLayout
+          Size="204,41.6"
+          Id="Package\CON_FEL_Priority_Group Out- Separate from Master package - Use separate Virtual memory\CON_FLC_Execute_queue_2\PRC_EPKG_queue_2"
+          TopLeft="15,95" />
+        <NodeLayout
+          Size="207.2,41.6"
+          Id="Package\CON_FEL_Priority_Group Out- Separate from Master package - Use separate Virtual memory\CON_FLC_Execute_queue_2\TSK_EST_Get_package"
+          TopLeft="13.5,17.4999999999999" />
+        <EdgeLayout
+          Id="Package\CON_FEL_Priority_Group Out- Separate from Master package - Use separate Virtual memory\CON_FLC_Execute_queue_2.PrecedenceConstraints[Constraint]"
+          TopLeft="117,59.4999999999999">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,35.5000000000001"
+              Start="0,0"
+              End="0,28.0000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.0000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-8,6.00000000000005,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\CON_FEL_Priority_Group Out- Separate from Master package - Use separate Virtual memory\CON_FLC_Execute_queue_2.PrecedenceConstraints[Constraint 1]"
+          TopLeft="117.75,137">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,52.5"
+              Start="0,0"
+              End="0,45">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,45" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-8,14.5,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="236,403.2"
+          Size="236,446.4"
+          Id="Package\CON_FEL_Priority_Group Out- Separate from Master package - Use separate Virtual memory\CON_FLC_Execute_queue_2"
+          TopLeft="285,9" />
+        <NodeLayout
+          Size="158.4,41.6"
+          Id="Package\CON_FEL_Priority_Group Out- Separate from Master package - Use separate Virtual memory\CON_FLC_Execute_queue_3\Loop Until Complete\Wait for 10 sec"
+          TopLeft="24,28" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="206.4,124.8"
+          Size="206.4,168"
+          Id="Package\CON_FEL_Priority_Group Out- Separate from Master package - Use separate Virtual memory\CON_FLC_Execute_queue_3\Loop Until Complete"
+          TopLeft="14,180" />
+        <NodeLayout
+          Size="198.4,41.6"
+          Id="Package\CON_FEL_Priority_Group Out- Separate from Master package - Use separate Virtual memory\CON_FLC_Execute_queue_3\PRC_EPKG_queue_3"
+          TopLeft="21,96" />
+        <NodeLayout
+          Size="207.2,41.6"
+          Id="Package\CON_FEL_Priority_Group Out- Separate from Master package - Use separate Virtual memory\CON_FLC_Execute_queue_3\TSK_EST_Get_package"
+          TopLeft="15.5,14.4999999999999" />
+        <EdgeLayout
+          Id="Package\CON_FEL_Priority_Group Out- Separate from Master package - Use separate Virtual memory\CON_FLC_Execute_queue_3.PrecedenceConstraints[Constraint]"
+          TopLeft="119.5,56.4999999999999">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,39.5000000000001"
+              Start="0,0"
+              End="0,32.0000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.0000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-8,8.00000000000005,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\CON_FEL_Priority_Group Out- Separate from Master package - Use separate Virtual memory\CON_FLC_Execute_queue_3.PrecedenceConstraints[Constraint 1]"
+          TopLeft="118.5,138">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42"
+              Start="0,0"
+              End="0,34.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-8,9.25,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="233.6,400.8"
+          Size="233.6,444"
+          Id="Package\CON_FEL_Priority_Group Out- Separate from Master package - Use separate Virtual memory\CON_FLC_Execute_queue_3"
+          TopLeft="528.5,12" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="796.8,511.2"
+          Size="796.8,553.6"
+          Id="Package\CON_FEL_Priority_Group Out- Separate from Master package - Use separate Virtual memory"
+          TopLeft="197.285714285714,286.285714285714" />
+        <NodeLayout
+          Size="235.2,41.6"
+          Id="Package\TSK_EST_Fill_Queue_1 (Shared)"
+          TopLeft="1316.95714285714,115.357142857143" />
+        <NodeLayout
+          Size="236,41.6"
+          Id="Package\TSK_EST_Fill_Queue_2 (Separate)"
+          TopLeft="507.571428571429,113.285714285714" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="1434.45714285714,157.357142857143">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="15.1857142857143,118.314285714286"
+              Start="0,0"
+              End="15.1857142857143,110.814285714286">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,55.157142857143" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,55.157142857143"
+                    Point2="0,59.157142857143"
+                    Point3="4,59.157142857143" />
+                  <mssgle:LineSegment
+                    End="11.1857142857143,59.157142857143" />
+                  <mssgle:CubicBezierSegment
+                    Point1="11.1857142857143,59.157142857143"
+                    Point2="15.1857142857143,59.157142857143"
+                    Point3="15.1857142857143,63.157142857143" />
+                  <mssgle:LineSegment
+                    End="15.1857142857143,110.814285714286" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="625.571428571429,155.285714285714">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-29.7857142857146,131"
+              Start="0,0"
+              End="-29.7857142857146,123.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,61.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,61.5"
+                    Point2="0,65.5"
+                    Point3="-4,65.5" />
+                  <mssgle:LineSegment
+                    End="-25.7857142857146,65.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-25.7857142857146,65.5"
+                    Point2="-29.7857142857146,65.5"
+                    Point3="-29.7857142857146,69.5" />
+                  <mssgle:LineSegment
+                    End="-29.7857142857146,123.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <DtsEventHandler
+    design-time-name="Package.EventHandlers[OnError]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="159,42"
+          Id="Package.EventHandlers[OnError]\EST_OnErrorLog"
+          TopLeft="5.5,5.5" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <PrecedenceConstraint
+    design-time-name="Package\CON_FEL_Priority_Group In - Within Master Package - Shared with same Virthual Memory\CON_FLC_Execute_queue_1.PrecedenceConstraints[Constraint]">
+    <ShowAnnotation>ConstraintOptions</ShowAnnotation>
+  </PrecedenceConstraint>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
